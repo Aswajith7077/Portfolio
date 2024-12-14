@@ -2,14 +2,13 @@ import type { Config } from "tailwindcss";
 
 const svgToDataUri = require("mini-svg-data-uri");
 
-const colors = require("tailwindcss/colors");
 const {
   default: flattenColorPalette,
 } = require("tailwindcss/lib/util/flattenColorPalette");
 
 const config = {
   darkMode: ["class"],
-  purge: [
+  content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
@@ -201,15 +200,15 @@ function addVariablesForColors({ addBase, theme }: any) {
   });
 }
 
-module.exports = {
-  content: [
-    './pages/**/*.{js,ts,jsx,tsx}', // Scan files in the `pages` directory
-    './components/**/*.{js,ts,jsx,tsx}', // Scan files in the `components` directory
-    './app/**/*.{js,ts,jsx,tsx}', // If you're using Next.js 13 app directory
-  ],
-  theme: {
-    extend: {},
-  },
-  plugins: [],
-};
+// module.exports = {
+//   content: [
+//     './pages/**/*.{js,ts,jsx,tsx}', // Scan files in the `pages` directory
+//     './components/**/*.{js,ts,jsx,tsx}', // Scan files in the `components` directory
+//     './app/**/*.{js,ts,jsx,tsx}', // If you're using Next.js 13 app directory
+//   ],
+//   theme: {
+//     extend: {},
+//   },
+//   plugins: [],
+// };
 export default config;
