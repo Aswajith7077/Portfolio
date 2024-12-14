@@ -1,6 +1,6 @@
 "use client";
 
-import React, { SetStateAction, useEffect, useRef } from "react";
+import React, { RefObject, SetStateAction, useEffect, useRef } from "react";
 import Image from "next/image";
 import { ProjectComponents } from "@/Constants/Projects";
 import { domain_tags } from "@/Constants/Projects";
@@ -24,36 +24,34 @@ const Tag = ({ ref,current,content, onClick }: TagProps) => {
 
 
 
+
 //
 
 const Works = () => {
   const [selected, setSelected] = useState(0);
   const [current, setCurrent] = useState(ProjectComponents[0]);
 
-  const TagRefs = domain_tags.map((value,key)=>useRef(null));
+  const TagRefs: React.RefObject<HTMLButtonElement | null>[] = domain_tags.map(() => useRef<HTMLButtonElement>(null));
+
 
   useEffect(
     () => {
-      const newComponents: any[] = ProjectComponents[selected];
+      const newComponents:any[] = ProjectComponents[selected];
       setCurrent(newComponents);
     },
     [selected]
   );
-
-  console.log(typeof current);
 
   const change = (value: number) => {
 
     
     const temp = selected;
 
-    console.log(temp, current);
-
-    if(TagRefs[temp].current){
+    if(TagRefs[temp].current instanceof HTMLButtonElement){
       TagRefs[temp].current.style.backgroundColor = "#00000000";
       TagRefs[temp].current.style.border = "#00000000"
     }
-    if(TagRefs[value].current) {
+    if(TagRefs[value]?.current instanceof HTMLButtonElement) {
       TagRefs[value].current.style.backgroundColor = "#0f172a";
       TagRefs[value].current.style.border = "#FFFFFF";
     }
