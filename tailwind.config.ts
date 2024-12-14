@@ -202,11 +202,7 @@ function addVariablesForColors({ addBase, theme }: any) {
 }
 
 module.exports = {
-  purge: [
-   // "./src/**/*.html",
-   // "./src/**/*.vue,
-   // "./src/**/*.jsx"
-  ],
+  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./Components/**/*.{js,ts,jsx,tsx}"],
   theme: {},
   variants: {},
   plugins: [],
