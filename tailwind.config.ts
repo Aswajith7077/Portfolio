@@ -9,7 +9,7 @@ const {
 
 const config = {
   darkMode: ["class"],
-  content: [
+  purge: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
     "./app/**/*.{ts,tsx}",
