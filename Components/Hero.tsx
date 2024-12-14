@@ -26,7 +26,7 @@ const Hero = () => {
         
 				{/* <h1 className='text-white'>Hi</h1> */}
 			</div>
-      <div className="absolute h-[50rem] p-10 w-full dark:bg-transparent bg-white  dark:bg-grid-white/[0.1] bg-grid-small-black/[0.1] relative flex items-center justify-center">
+      <div className="h-[50rem] p-10 w-full dark:bg-transparent bg-white  dark:bg-grid-white/[0.1] bg-grid-small-black/[0.1] relative flex items-center justify-center">
         <div className="absolute pointer-events-none inset-0 flex items-center justify-center dark:bg-black-100 bg-white [mask-image:radial-gradient(ellipse_at_center,transparent_20%,black)]"></div>
         <div className='w-full flex flex-col z-10'>
           <motion.h1
@@ -45,7 +45,7 @@ const Hero = () => {
           <motion.p initial={{x:100,opacity:0}} whileInView={{x:0,opacity:1,transition:{
       duration:0.5,
       delay:0.25
-    }}} className='font-[lato] text-white my-10 mx-2 w-[50rem] text-lg font-sans'>{description}</motion.p>
+    }}} className='font-[lato] text-white my-10 mx-2 w-[50rem] text-lg'>{description}</motion.p>
           <div className='flex flex-row gap-10 my-[5%]'>
             <Button title={'Git Hub'} icon={'github'} delay={0}/>
             <Button title={'Figma'} icon={'figma'} delay={1}/>

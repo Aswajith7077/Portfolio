@@ -1,23 +1,23 @@
 const navLinks: { title: string; link: string }[] = [
   {
     title: "Home",
-    link: "home"
+    link: "#home"
   },
   {
     title: "Works",
-    link: "works"
+    link: "#works"
   },
   {
     title: "Experience",
-    link: "experience"
+    link: "#experience"
   },
   {
     title: "Skills",
-    link: "skills"
+    link: "#skills"
   },
   {
     title: "Contact",
-    link: "contact"
+    link: "#contact"
   }
 ];
 

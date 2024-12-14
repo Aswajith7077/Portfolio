@@ -1,7 +1,8 @@
 "use client";
 
 import React from "react";
-import { Link as ScrollLink } from "react-scroll";
+// import { Link as ScrollLink } from "react-scroll/modules";
+// import Link from "next/link";
 import { motion } from "framer-motion";
 import { navLinks,nav_link_animation } from "@/Constants/NavStyles";
 
@@ -10,11 +11,11 @@ const NavBar = () => {
       <div className="flex flex-row">
         {navLinks.map((value, key) => {
           return <div className="font-semibold font-[lato] text-white text-lg px-10 py-4" key={key}>
-              <ScrollLink to={value.link} smooth={true} duration offset={-100}>
+              <a href={value.link} >
                 <motion.h1 whileHover={nav_link_animation} whileTap={{ scale: 0.9 }} className="cursor-pointer">
                   {value.title}
                 </motion.h1>
-              </ScrollLink>
+              </a>
             </div>;
         })}
       </div>
