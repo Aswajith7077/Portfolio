@@ -2,44 +2,15 @@
 
 import React from 'react';
 import Image from 'next/image';
-import { useEffect,useState } from 'react';
 import { FlipWords } from './ui/flip-words';
 import { myself, resume_link } from '@/Constants/Details';
 import { HiDocumentText } from "react-icons/hi";
 import Button from './tools/Button';
 import { motion } from 'framer-motion';
-import { TypewriterEffect } from './ui/typewriter-effect';
 
 
 const description:string = "I'm passionate UI/UX designer with a mission to create delightful and intuitive digital experiences.With a strong foundation in design principles and a keen eye for detail. I specialize in translating complex ideas."
 
-
-const banner_title_words:readonly {text:string,className:string}[] = [
-  {
-    text: "Transforming",
-    className: "text-white font-[lato] text-4xl lg:text-6xl"
-  },
-  {
-    text: "Concepts",
-    className: "text-white font-[lato] text-4xl lg:text-6xl"
-  },
-  {
-    text: "into",
-    className: "text-white font-[lato] text-4xl lg:text-6xl"
-  },
-  {
-    text: "Seamless",
-    className: "text-white font-[lato] text-4xl lg:text-6xl"
-  },
-  {
-    text: "User",
-    className: "text-blue-600 font-[lato] text-4xl lg:text-6xl"
-  },
-  {
-    text: "Experience",
-    className: "text-blue-600 font-[lato] text-4xl lg:text-6xl"
-  }
-];
 
 const designations: string[] = [
 	"UI/UX designer",

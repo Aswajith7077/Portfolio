@@ -3,14 +3,18 @@
 import React from "react";
 import { motion } from "framer-motion";
 import { SkillProps, Skills, TagProps } from "@/Constants/Skills";
-
-import { FaReact } from "react-icons/fa";
-import { SiMongodb } from "react-icons/si";
-import { FaPython } from "react-icons/fa";
-import { SiAndroidstudio } from "react-icons/si";
 import { skillsDescription } from "@/Constants/Details";
 
-const Tags = ({ content }: TagProps) => {
+type tagProps = {
+  content: TagProps
+};
+
+type skillProps = {
+  content: SkillProps;
+  delay: number;
+};
+
+const Tags = ({ content }: tagProps) => {
   return (
     <div>
       <motion.button
@@ -27,7 +31,7 @@ const Tags = ({ content }: TagProps) => {
   );
 };
 
-const Card = ({ content, delay}: SkillProps) => {
+const Card = ({ content, delay }: skillProps) => {
   return (
     <motion.div
       className="flex flex-row mx-5 my-[5%]"
@@ -57,12 +61,19 @@ const Card = ({ content, delay}: SkillProps) => {
 };
 
 const SkillsComponent = () => {
-  return <div className="my-[3%] mx-[5%] flex flex-row" id="skills">
+  return (
+    <div className="my-[3%] mx-[5%] flex flex-row" id="skills">
       <div className="w-2/5">
-        <h1 className="font-[montserrat] text-5xl font-semibold ">
-          My Skills
-        </h1>
-        <motion.p initial={{ x: -100, opacity: 0 }} whileInView={{ x: 0, opacity: 1, transition: { duration: 0.5, delay: 0.25 } }} className="font-[source sans 3] my-[10%] text-lg mr-10">
+        <h1 className="font-[montserrat] text-5xl font-semibold ">My Skills</h1>
+        <motion.p
+          initial={{ x: -100, opacity: 0 }}
+          whileInView={{
+            x: 0,
+            opacity: 1,
+            transition: { duration: 0.5, delay: 0.25 }
+          }}
+          className="font-[source sans 3] my-[10%] text-lg mr-10"
+        >
           {skillsDescription}
         </motion.p>
       </div>
@@ -71,7 +82,8 @@ const SkillsComponent = () => {
           return <Card key={key} content={value} delay={key - key / 2} />;
         })}
       </div>
-    </div>;
+    </div>
+  );
 };
 
 export default SkillsComponent;

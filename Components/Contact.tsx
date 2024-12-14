@@ -6,7 +6,6 @@ import { RxArrowTopRight } from "react-icons/rx";
 import { FaPhoneAlt } from "react-icons/fa";
 import { motion } from "framer-motion";
 import { address, email, myName, phone } from "@/Constants/Details";
-import TextField from '@mui/material/TextField';
 
 
 
@@ -142,8 +141,7 @@ const Contact = () => {
       duration:0.5,
       delay:0.25
     }}}  className="flex flex-row w-full gap-10 py-2 items-center justify-center">
-            {/* <TextField  label="First Name" variant="standard" color="primary" className="w-[30%] px-10 py-4 rounded-[15px]" onChange={e => setFirstName(e.target.value)}/>
-              <TextField  label="Last Name" variant="standard" className="w-[30%] px-10 py-4 rounded-[15px]" onChange={e => setLastName(e.target.value)}/> */}
+
             <input type="text" placeholder="First Name" className="w-[30%] bg-transparent border-b-2 outline-none px-5 py-4" onChange={e => setFirstName(e.target.value)} />
             <input type="text" placeholder="Last Name" className="w-[30%] bg-transparent border-b-2 outline-none px-5 py-4" onChange={e => setLastName(e.target.value)} />
           </motion.div>

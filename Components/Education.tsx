@@ -4,7 +4,11 @@ import React from "react";
 import { motion } from "framer-motion";
 import { education, EducationProps, experiences } from "@/Constants/Details";
 
-const Card = ({ content }: EducationProps) => {
+type edProps = {
+  content:EducationProps
+}
+
+const Card = ({ content }: edProps) => {
   return (
     <motion.div
       initial={{ x: -100, opacity: 0 }}
