@@ -202,10 +202,14 @@ function addVariablesForColors({ addBase, theme }: any) {
 }
 
 module.exports = {
-  purge: ["./pages/**/*.{js,ts,jsx,tsx}", "./components/**/*.{js,ts,jsx,tsx}"],
-  theme: {},
-  variants: {},
+  content: [
+    './pages/**/*.{js,ts,jsx,tsx}', // Scan files in the `pages` directory
+    './components/**/*.{js,ts,jsx,tsx}', // Scan files in the `components` directory
+    './app/**/*.{js,ts,jsx,tsx}', // If you're using Next.js 13 app directory
+  ],
+  theme: {
+    extend: {},
+  },
   plugins: [],
 };
-
 export default config;
