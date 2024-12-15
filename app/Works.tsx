@@ -5,11 +5,12 @@ import { ProjectComponents } from "@/Constants/Projects";
 import { domain_tags } from "@/Constants/Projects";
 import { motion } from "framer-motion";
 import { useState } from "react";
+import { JSX } from "react/jsx-runtime";
 
 type TagProps = {
-  ref:any,
+  ref:React.RefObject<HTMLButtonElement | null>,
   current:number,
-  content: String;
+  content: string;
   onClick: CallableFunction;
 };
 
@@ -30,13 +31,13 @@ const Works = () => {
 
   useEffect(
     () => {
-      const newComponents:any[] = ProjectComponents[selected];
+      const newComponents:JSX.Element[] = ProjectComponents[selected];
       setCurrent(newComponents);
     },
     [selected]
   );
 
-  const change = (value: any  ) => {
+  const change = (value: number) => {
     const temp = selected;
 
     if(TagRefs[temp].current instanceof HTMLButtonElement){

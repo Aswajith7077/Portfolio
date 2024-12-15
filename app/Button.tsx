@@ -4,6 +4,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import { FaGithub } from "react-icons/fa";
 import { FaFigma } from "react-icons/fa6";
+import { JSX } from "react/jsx-runtime";
 
 type ButtonProps = {
   title: string,
@@ -12,8 +13,8 @@ type ButtonProps = {
 };
 
 const Button = ({ title, icon = "",delay }: ButtonProps) => {
-  var element: any;
-  var link: string = "";
+  let element: JSX.Element | null = null;
+  let link: string = "";
   if (icon == "github") {
     element = <FaGithub size={24} />;
     link = "https://github.com/Aswajith7077";
@@ -23,7 +24,7 @@ const Button = ({ title, icon = "",delay }: ButtonProps) => {
       "https://www.figma.com/files/team/1344679975946761819/recents-and-sharing?fuid=1220748968210947621";
   }
 
-  if(!link.length || !element)
+  if(!link.length || !React.isValidElement(element))
     return
 
   return (
