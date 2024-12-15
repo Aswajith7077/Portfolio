@@ -104,8 +104,9 @@ const Contact = () => {
       message:message
     });
 
+    console.log(window.location.origin);
 
-    fetch('http://localhost:3000/api/sendmail',{
+    fetch(`${window.location.origin}/api/sendmail`,{
       method:'POST',
       headers:{
         'Content-Type':'application/json',

@@ -28,6 +28,8 @@ export async function POST(req:NextRequest){
     const content = await req.json();
     const resend = new Resend(process.env.RESEND_API);
 
+    
+
     try{
         const data = await resend.emails.send({
             from:'Portfolio <no-reply@resend.dev>',
