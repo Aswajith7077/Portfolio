@@ -10,11 +10,11 @@ import { address, email, myName, phone } from "@/Constants/Details";
 
 
 type reqProps = {
-  firstName:String,
-  lastName:String,
-  email:String,
-  phone:String,
-  message:String,
+  firstName:string,
+  lastName:string,
+  email:string,
+  phone:string,
+  message:string,
 }
 
 
@@ -38,7 +38,7 @@ const Address = () => {
     <motion.h1 initial={{x:100,opacity:0}} whileInView={{x:0,opacity:1,transition:{
       duration:0.5,
       delay:0.25
-    }}} className="font-[montserrat] font-semibold text-4xl">Contact</motion.h1>
+    }}} className="font-[montserrat] font-semibold text-4xl">Contact</motion.h1>  
     <motion.div initial={{x:100,opacity:0}} whileInView={{x:0,opacity:1,transition:{
       duration:0.5,
       delay:0.5
@@ -105,7 +105,7 @@ const Contact = () => {
     });
 
 
-    const result = fetch('http://localhost:3000/api/sendmail',{
+    fetch('http://localhost:3000/api/sendmail',{
       method:'POST',
       headers:{
         'Content-Type':'application/json',
@@ -113,7 +113,7 @@ const Contact = () => {
       body:req
     })
     .then((res)=>{
-      alert('Message Sent Successfully')
+      alert(`Message Sent Successfully ${res.formData}`)
     })
     .catch(err=>alert(err.message))
 
@@ -132,7 +132,7 @@ const Contact = () => {
         delay:0.25
       } }} 
       className="flex flex-row items-center gap-10 mx-[10%]">
-        <motion.h1  className="text-[224px] text-purple-600 select-none">Let's Talk</motion.h1>
+        <motion.h1  className="text-[224px] text-purple-600 select-none">{"Let's Talk"}</motion.h1>
         <RxArrowTopRight size={192} />
       </motion.div>
       <div className="flex flex-row">

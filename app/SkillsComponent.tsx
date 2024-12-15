@@ -22,7 +22,6 @@ const Tags = ({ content }: tagProps) => {
         whileTap={{ scale: 0.95 }}
         className="bg-[#000329]  px-5 rounded-full py-3 flex flex-row items-center gap-2 my-3 mx-2"
       >
-        {/* {content.icon} */}
         <h1 className="font-[source sans 3] font-semibold text-gray-400 ">
           {content.title}
         </h1>

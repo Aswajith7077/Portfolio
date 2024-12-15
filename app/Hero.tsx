@@ -5,7 +5,7 @@ import Image from "next/image";
 import { FlipWords } from "../Components/ui/flip-words";
 import { myself, resume_link } from "@/Constants/Details";
 import { HiDocumentText } from "react-icons/hi";
-import Button from "../Components/tools/Button";
+import Button from "./Button";
 import { motion } from "framer-motion";
 
 const description: string =

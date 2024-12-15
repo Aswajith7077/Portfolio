@@ -1,10 +1,8 @@
 "use client";
 
-import React, { RefObject, SetStateAction, useEffect, useRef } from "react";
-import Image from "next/image";
+import React, { SetStateAction, useEffect, useRef } from "react";
 import { ProjectComponents } from "@/Constants/Projects";
 import { domain_tags } from "@/Constants/Projects";
-import { RxArrowTopRight } from "react-icons/rx";
 import { motion } from "framer-motion";
 import { useState } from "react";
 
@@ -16,16 +14,12 @@ type TagProps = {
 };
 
 const Tag = ({ ref,current,content, onClick }: TagProps) => {
-  return <motion.button ref={ref} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={e => onClick()} className={`py-3 px-7 ${current == 0 ? "bg-[#0f172a]" : "bg-black-100"} rounded-full font-[lato] font-semibold`}>
+  return <motion.button ref={ref} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={onClick()} className={`py-3 px-7 ${current == 0 ? "bg-[#0f172a]" : "bg-black-100"} rounded-full font-[lato] font-semibold`}>
       {content}
     </motion.button>;
 };
 
 
-
-
-
-//
 
 const Works = () => {
   const [selected, setSelected] = useState(0);
@@ -42,9 +36,7 @@ const Works = () => {
     [selected]
   );
 
-  const change = (value: number) => {
-
-    
+  const change = (value: any  ) => {
     const temp = selected;
 
     if(TagRefs[temp].current instanceof HTMLButtonElement){

@@ -1,8 +1,6 @@
 "use client";
 
 import React from "react";
-// import { Link as ScrollLink } from "react-scroll/modules";
-// import Link from "next/link";
 import { motion } from "framer-motion";
 import { navLinks,nav_link_animation } from "@/Constants/NavStyles";
 
