@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Ref, SetStateAction, useEffect, useMemo, useRef } from "react";
+import React, { useEffect } from "react";
 import { ProjectComponents } from "@/Constants/Projects";
 import { domain_tags } from "@/Constants/Projects";
 import { motion } from "framer-motion";
@@ -9,12 +9,11 @@ import { JSX } from "react/jsx-runtime";
 
 type TagProps = {
   className:string,
-  current:number,
   content: string;
   onClick: CallableFunction;
 };
 
-const Tag = ({ className,current,content, onClick }: TagProps) => {
+const Tag = ({ className,content, onClick }: TagProps) => {
   return <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={()=>onClick()} className={`py-3 px-7 rounded-full font-[lato] font-semibold ${className}`}>
       {content}
     </motion.button>;
@@ -63,7 +62,7 @@ const Works = () => {
 
       <div className="flex flex-row gap-5 mt-10">
         {domain_tags.map((value, key) => {
-          return <Tag key={key} current={key} className={(key == selected)?'bg-[#0F172A]':'bg-transparent'} content={value} onClick={()=>{
+          return <Tag key={key} className={(key == selected)?'bg-[#0F172A]':'bg-transparent'} content={value} onClick={()=>{
             setSelected(key);
             console.log(selected,key);
           }} />;
