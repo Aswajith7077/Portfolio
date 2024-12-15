@@ -2,7 +2,7 @@
 
 import { NextRequest, NextResponse } from "next/server";
 import { Resend } from 'resend';
-import { reqProps } from "@/Components/Contact";
+import { reqProps } from "@/app/Contact";
 import { email } from "@/Constants/Details";
 
 
