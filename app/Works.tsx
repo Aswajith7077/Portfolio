@@ -1,6 +1,6 @@
 "use client";
 
-import React, { SetStateAction, useEffect, useRef } from "react";
+import React, { SetStateAction, useEffect, useMemo, useRef } from "react";
 import { ProjectComponents } from "@/Constants/Projects";
 import { domain_tags } from "@/Constants/Projects";
 import { motion } from "framer-motion";
@@ -26,9 +26,10 @@ const Works = () => {
   const [selected, setSelected] = useState(0);
   const [current, setCurrent] = useState(ProjectComponents[0]);
 
-  const TagRefs: React.RefObject<HTMLButtonElement | null>[] = [];
-  for(var i = 0;i < domain_tags.length;i++)
-    TagRefs.push(useRef<HTMLButtonElement>(null));
+  const TagRefs: React.RefObject<HTMLButtonElement | null>[] = useMemo(
+  () => Array.from({ length: domain_tags.length }, () => useRef<HTMLButtonElement>(null)),
+  [domain_tags.length]
+);
 
 
   useEffect(
