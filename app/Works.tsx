@@ -26,7 +26,9 @@ const Works = () => {
   const [selected, setSelected] = useState(0);
   const [current, setCurrent] = useState(ProjectComponents[0]);
 
-  const TagRefs: React.RefObject<HTMLButtonElement | null>[] = domain_tags.map(() => useRef<HTMLButtonElement>(null));
+  const TagRefs: React.RefObject<HTMLButtonElement | null>[] = [];
+  for(var i = 0;i < domain_tags.length;i++)
+    TagRefs.push(useRef<HTMLButtonElement>(null));
 
 
   useEffect(
