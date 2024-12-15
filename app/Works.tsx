@@ -1,6 +1,6 @@
 "use client";
 
-import React, { SetStateAction, useEffect, useMemo, useRef } from "react";
+import React, { Ref, SetStateAction, useEffect, useMemo, useRef } from "react";
 import { ProjectComponents } from "@/Constants/Projects";
 import { domain_tags } from "@/Constants/Projects";
 import { motion } from "framer-motion";
@@ -8,14 +8,14 @@ import { useState } from "react";
 import { JSX } from "react/jsx-runtime";
 
 type TagProps = {
-  ref:React.RefObject<HTMLButtonElement | null>,
+  className:string,
   current:number,
   content: string;
   onClick: CallableFunction;
 };
 
-const Tag = ({ ref,current,content, onClick }: TagProps) => {
-  return <motion.button ref={ref} whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={onClick()} className={`py-3 px-7 ${current == 0 ? "bg-[#0f172a]" : "bg-black-100"} rounded-full font-[lato] font-semibold`}>
+const Tag = ({ className,current,content, onClick }: TagProps) => {
+  return <motion.button whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }} onClick={()=>onClick()} className={`py-3 px-7 rounded-full font-[lato] font-semibold ${className}`}>
       {content}
     </motion.button>;
 };
@@ -26,12 +26,8 @@ const Works = () => {
   const [selected, setSelected] = useState(0);
   const [current, setCurrent] = useState(ProjectComponents[0]);
 
-  const TagRefs: React.RefObject<HTMLButtonElement | null>[] = useMemo(
-  () => Array.from({ length: domain_tags.length }, () => useRef<HTMLButtonElement>(null)),
-  [domain_tags.length]
-);
-
-
+  // const TagRefs: React.RefObject<Ref<HTMLButtonElement>[]> = useRef([]);
+  
   useEffect(
     () => {
       const newComponents:JSX.Element[] = ProjectComponents[selected];
@@ -40,19 +36,19 @@ const Works = () => {
     [selected]
   );
 
-  const change = (value: number) => {
-    const temp = selected;
+  // const change = (value: number) => {
 
-    if(TagRefs[temp].current instanceof HTMLButtonElement){
-      TagRefs[temp].current.style.backgroundColor = "#00000000";
-      TagRefs[temp].current.style.border = "#00000000"
-    }
-    if(TagRefs[value]?.current instanceof HTMLButtonElement) {
-      TagRefs[value].current.style.backgroundColor = "#0f172a";
-      TagRefs[value].current.style.border = "#FFFFFF";
-    }
-    setSelected(value as SetStateAction<number>);
-  };
+  //   // if(TagRefs.current[selected] instanceof HTMLButtonElement){
+  //   //   TagRefs.current[selected].style.backgroundColor = "#00000000";
+  //   //   TagRefs.current[selected].style.border = "#00000000"
+  //   // }
+  //   // if(TagRefs?.current[selected] instanceof HTMLButtonElement) {
+  //   //   TagRefs.current[selected].style.backgroundColor = "#0f172a";
+  //   //   TagRefs.current[selected].style.border = "#FFFFFF";
+  //   // }
+  //   // // console.log(value,selected);
+  //   setSelected(value as SetStateAction<number>);
+  // };
 
 
 
@@ -67,7 +63,10 @@ const Works = () => {
 
       <div className="flex flex-row gap-5 mt-10">
         {domain_tags.map((value, key) => {
-          return <Tag key={key} current={key} ref={TagRefs[key]} content={value} onClick={()=>change(key)} />;
+          return <Tag key={key} current={key} className={(key == selected)?'bg-[#0F172A]':'bg-transparent'} content={value} onClick={()=>{
+            setSelected(key);
+            console.log(selected,key);
+          }} />;
         })}
       </div>
       <div className="flex flex-row gap-10">
