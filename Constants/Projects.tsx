@@ -181,7 +181,7 @@ const Card = ({ content, delay }: CardProps) => {
         <motion.button
           whileHover={{ scale: 1.06 }}
           whileTap={{ scale: 0.95 }}
-          className=" flex flex-row items-center gap-5 justify-center bg-slate-900 my-5 rounded-full py-2"
+          className=" flex flex-row items-center gap-5 px-7 justify-center bg-slate-900 my-10 rounded-full py-3 "
         >
           View Source
           <RxArrowTopRight size={20} />
@@ -194,7 +194,7 @@ const Card = ({ content, delay }: CardProps) => {
 const ProjectComponents: any[] = [];
 for (var i = 0; i < projects.length; i++) {
   ProjectComponents.push(
-    <div className="flex flex-row gap-10 mx-[5%] my-10">
+    <div className="flex flex-col lg:flex-row gap-10 mx-[5%] my-10">
       {projects[i].map((value: any, key: any) => {
         return <Card key={key} content={value} delay={key} />;
       })}

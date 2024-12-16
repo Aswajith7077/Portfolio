@@ -60,29 +60,21 @@ const Card = ({ content, delay }: skillProps) => {
 };
 
 const SkillsComponent = () => {
-  return (
-    <div className="my-[3%] mx-[5%] flex flex-row" id="skills">
-      <div className="w-2/5">
-        <h1 className="font-[montserrat] text-5xl font-semibold ">My Skills</h1>
-        <motion.p
-          initial={{ x: -100, opacity: 0 }}
-          whileInView={{
-            x: 0,
-            opacity: 1,
-            transition: { duration: 0.5, delay: 0.25 }
-          }}
-          className="font-[source sans 3] my-[10%] text-lg mr-10"
-        >
+  return <div className="my-[3%] mx-[5%] flex flex-col lg:flex-row" id="skills">
+      <div className="w-full lg:w-2/5">
+        <h1 className="font-[montserrat] text-5xl font-semibold ">
+          My Skills
+        </h1>
+        <motion.p initial={{ x: -100, opacity: 0 }} whileInView={{ x: 0, opacity: 1, transition: { duration: 0.5, delay: 0.25 } }} className="font-[source sans 3] my-[10%] text-lg mr-10">
           {skillsDescription}
         </motion.p>
       </div>
-      <div className="grid grid-cols-2 w-3/5">
+      <div className="grid grid-cols-1 md:grid-cols-2 w-full lg:w-3/5">
         {Skills.map((value, key) => {
           return <Card key={key} content={value} delay={key - key / 2} />;
         })}
       </div>
-    </div>
-  );
+    </div>;
 };
 
 export default SkillsComponent;

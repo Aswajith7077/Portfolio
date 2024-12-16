@@ -35,7 +35,7 @@ const Card = ({ content }: edProps) => {
 
 const Education = () => {
   return (
-    <div className="flex flex-row mx-[5%] my-[5%]" id="experience">
+    <div className="flex flex-col lg:flex-row mx-[5%] my-[5%]" id="experience">
       <div className="flex flex-col w-full">
         <h1 className="font-[montserrat] font-semibold text-3xl">
           My Education
