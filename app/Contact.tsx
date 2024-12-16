@@ -34,7 +34,7 @@ const Address = () => {
   }
 
 
-  return (<div className="flex flex-col lg:w-2/6 my-[10%] md:my-[5%] lg:border-l-4 px-[5%]" id="contact">
+  return (<div className="flex flex-col lg:w-2/6 my-[10%] md:my-[5%] lg:border-l-4 px-10" id="contact">
     <motion.h1 initial={{x:100,opacity:0}} whileInView={{x:0,opacity:1,transition:{
       duration:0.5,
       delay:0.25
@@ -54,7 +54,7 @@ const Address = () => {
         <h2 className="font-[montserrat] font-semibold text-2xl text-left w-full">
           Address
         </h2>
-        <p className="w-[20rem]">
+        <p className="lg:w-[20rem]">
           {address}
         </p>
       </div>
@@ -131,7 +131,7 @@ const Contact = () => {
         delay:0.25
       } }} 
       className="flex flex-row items-center gap-10 mx-[10%]">
-        <motion.h1  className="text-[224px] text-purple-600 select-none">{"Let's Talk"}</motion.h1>
+        <motion.h1  className="text-[128px] md:text-[224px] text-purple-600 select-none">{"Let's Talk"}</motion.h1>
         <RxArrowTopRight size={192} />
       </motion.div>
       <div className="flex flex-col lg:flex-row items-center lg:items-start">

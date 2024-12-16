@@ -19,7 +19,7 @@ const Tag = ({ className, content, onClick }: TagProps) => {
       whileHover={{ scale: 1.05 }}
       whileTap={{ scale: 0.95 }}
       onClick={() => onClick()}
-      className={`py-3 px-7 rounded-full font-[lato] font-semibold ${className}`}
+      className={`py-3 px-5 rounded-full font-[lato] font-semibold ${className}`}
     >
       {content}
     </motion.button>
@@ -47,7 +47,7 @@ const Works = () => {
         Latest Project
       </h1>
 
-      <div className="flex flex-row gap-5 mt-10">
+      <div className="flex flex-row gap-1 md:gap-5 mt-10">
         {domain_tags.map((value, key) => {
           return (
             <Tag

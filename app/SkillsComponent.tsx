@@ -33,7 +33,7 @@ const Tags = ({ content }: tagProps) => {
 const Card = ({ content, delay }: skillProps) => {
   return (
     <motion.div
-      className="flex flex-row mx-5 my-[5%]"
+      className="flex flex-row lg:mx-5 my-[5%]"
       initial={{ y: 100, opacity: 0 }}
       whileInView={{
         y: 0,
@@ -65,7 +65,7 @@ const SkillsComponent = () => {
         <h1 className="font-[montserrat] text-5xl font-semibold ">
           My Skills
         </h1>
-        <motion.p initial={{ x: -100, opacity: 0 }} whileInView={{ x: 0, opacity: 1, transition: { duration: 0.5, delay: 0.25 } }} className="font-[source sans 3] my-[10%] text-lg mr-10">
+        <motion.p initial={{ x: -100, opacity: 0 }} whileInView={{ x: 0, opacity: 1, transition: { duration: 0.5, delay: 0.25 } }} className="font-[source sans 3] my-[10%] text-lg lg:mr-10">
           {skillsDescription}
         </motion.p>
       </div>
