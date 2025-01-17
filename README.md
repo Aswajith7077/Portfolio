@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+---
 
-## Getting Started
+# Portfolio Website
 
-First, run the development server:
+Welcome to my personal portfolio website! This project showcases my skills, projects, and experiences while offering a simple way to get in touch with me using the **Resend** mail service for seamless communication.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+---
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Features
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### 🖥️ Built with Next.js
+- **Server-side Rendering (SSR)**: Ensures fast load times and great SEO.
+- **Static Site Generation (SSG)**: Combines performance and scalability.
+- **Modern UI/UX**: Designed with responsiveness and user engagement in mind.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### 📬 Resend Mail Services
+- **Contact Form**: Allows visitors to send messages directly to my inbox.
+- **Secure Communication**: Messages are delivered reliably and safely using Resend APIs.
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## Tech Stack
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Frontend:
+- **Next.js**: React-based framework for building fast, scalable websites.
+- **Tailwind CSS **: For styling and consistent UI components.
+- **React**: The core library for building interactive user interfaces.
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+### Backend/Services:
+- **Resend**: Handles email delivery for the contact form.
+- **API Routes**: Built-in Next.js API routes for backend logic.
 
-## Deploy on Vercel
+---
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Features to Explore
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Home**: A brief introduction about me and my work.
+- **Projects**: Showcase of completed and ongoing projects with descriptions and live/demo links.
+- **About**: Detailed information about my skills, certifications, and experiences.
+- **Contact**: A form to reach me via email, powered by Resend.
+
+---
